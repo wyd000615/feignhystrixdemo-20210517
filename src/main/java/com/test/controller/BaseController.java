@@ -9,8 +9,10 @@ import org.springframework.web.bind.annotation.ResponseBody;
 public abstract class BaseController {
 
     /*该方法必须是定义为静态*/
-    public static void helloBlock(Throwable te) {
-        System.out.println("--timeout----" + te.getMessage());
+    public static void helloBlock(String str) {
+        System.out.println("--熔断方法----" + str);
+
+       // System.out.println("--timeout----" + te.getMessage());
     }
 
     //如果需要熔断的方法没有指定方法, 默认走defaultFallback方法
