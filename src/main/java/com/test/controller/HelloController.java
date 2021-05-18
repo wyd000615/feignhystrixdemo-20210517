@@ -1,6 +1,6 @@
 package com.test.controller;
 
-import com.test.service.HelloService;
+import com.test.service.impl.HelloServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.RestController;
 @RequestMapping("/hello")
 public class HelloController {
     @Autowired
-    HelloService helloService;
+    HelloServiceImpl helloService;
 
     @RequestMapping("/test")
     public void sayHello() throws InterruptedException {

@@ -14,8 +14,8 @@ public  class BaseController {
 
        // System.out.println("--timeout----" + te.getMessage());
     }
-    public static String helloBlock(String str) {
-        System.out.println("--熔断方法----" + str);
+    public  String helloBlock(String str) {
+        System.out.println("--熔断方法--1--" + str);
 
         // System.out.println("--timeout----" + te.getMessage());
         return "熔断";
