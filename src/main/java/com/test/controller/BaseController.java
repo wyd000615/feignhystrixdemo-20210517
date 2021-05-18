@@ -2,19 +2,30 @@ package com.test.controller;
 
 
 import com.netflix.hystrix.contrib.javanica.annotation.DefaultProperties;
+import org.springframework.stereotype.Component;
 import org.springframework.web.bind.annotation.ResponseBody;
-
+@Component
 @DefaultProperties(defaultFallback = "defaultFallback", ignoreExceptions = {}, commandProperties = {}, groupKey = "组名", threadPoolKey = "线程池名")
-@ResponseBody
-public abstract class BaseController {
+public  class BaseController {
 
     /*该方法必须是定义为静态*/
-    public static void helloBlock(String str) {
+    public static void helloBlock2(String str) {
         System.out.println("--熔断方法----" + str);
 
        // System.out.println("--timeout----" + te.getMessage());
     }
+    public static String helloBlock(String str) {
+        System.out.println("--熔断方法----" + str);
 
+        // System.out.println("--timeout----" + te.getMessage());
+        return "熔断";
+    }
+    /*该方法必须是定义为静态*/
+    public static void helloBlock() {
+        System.out.println("--熔断方法-2---" );
+
+        // System.out.println("--timeout----" + te.getMessage());
+    }
     //如果需要熔断的方法没有指定方法, 默认走defaultFallback方法
     public static void defaultFallback(Throwable te) {
         System.out.println("1111");
