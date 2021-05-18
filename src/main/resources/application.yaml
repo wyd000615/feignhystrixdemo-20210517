@@ -5,4 +5,4 @@ spring:
     name: nacos-consumer
 
 
-feign.sentinel.enabled: true
+#feign.sentinel.enabled: true
