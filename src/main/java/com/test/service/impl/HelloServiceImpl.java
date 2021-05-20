@@ -13,7 +13,7 @@ public class HelloServiceImpl  extends BaseController    {
 
 
     public String sayHello(String str) throws InterruptedException {
-        Thread.sleep(3000);
+       // Thread.sleep(3000);
         System.out.println("我是正常方法" + str);
 
         return "正常" + str;
